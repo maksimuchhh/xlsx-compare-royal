@@ -57,22 +57,27 @@ function App() {
 
           const secondValue = secondBookBColumn[secondValueKey]?.v;
 
-          if (secondValue === firstValue) {
-            // Check price
-            const firstPrice = firstBookSheet[`C${key + 1}`]?.v;
-            const secondPrice = secondBookSheet[`C${secondValueKey + 1}`]?.v;
-
-            if (!firstPrice && !secondPrice) return;
-
-            if (firstPrice !== secondPrice) {
-              // Add row to result Array
-              resultArr.push([
-                firstBookSheet[`A${key + 1}`] || "",
-                firstBookSheet[`B${key + 1}`] || "",
-                firstBookSheet[`C${key + 1}`] || "",
-              ]);
-            }
+          if (!secondValue) {
+            return resultArr.push([
+              firstBookSheet[`A${key + 1}`] || "",
+              firstBookSheet[`B${key + 1}`] || "",
+              "Видалено",
+            ]);
           }
+
+          // Check price
+          const firstPrice = firstBookSheet[`C${key + 1}`]?.v;
+          const secondPrice = secondBookSheet[`C${secondValueKey + 1}`]?.v;
+
+          if (!firstPrice && !secondPrice) return;
+
+          if (firstPrice === secondPrice) return;
+          // Add row to result Array
+          resultArr.push([
+            firstBookSheet[`A${key + 1}`] || "",
+            firstBookSheet[`B${key + 1}`] || "",
+            firstBookSheet[`C${key + 1}`] || "",
+          ]);
         }
       });
     });
