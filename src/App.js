@@ -9,8 +9,6 @@ function App() {
   async function onDrop(files) {
     if (files.length !== 2) return;
 
-    files = [...files].reverse();
-
     const firstFile = files[0];
     const secondFile = files[1];
 
@@ -76,7 +74,7 @@ function App() {
           resultArr.push([
             firstBookSheet[`A${key + 1}`] || "",
             firstBookSheet[`B${key + 1}`] || "",
-            firstBookSheet[`C${key + 1}`] || "",
+            secondPrice || "",
           ]);
         }
       });
