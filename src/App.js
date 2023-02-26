@@ -57,7 +57,7 @@ function App() {
 
           const secondValue = secondBookBColumn[secondValueKey]?.v;
 
-          if (!secondValue) {
+          if (!secondValue && firstBookSheet[`B${key + 1}`]) {
             return resultArr.push([
               firstBookSheet[`A${key + 1}`] || "",
               firstBookSheet[`B${key + 1}`] || "",
