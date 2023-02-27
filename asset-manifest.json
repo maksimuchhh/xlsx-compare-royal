@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/xlsx-compare-royal/static/js/main.f6c7fe3b.js",
+    "main.js": "/xlsx-compare-royal/static/js/main.500a4105.js",
     "index.html": "/xlsx-compare-royal/index.html",
-    "main.f6c7fe3b.js.map": "/xlsx-compare-royal/static/js/main.f6c7fe3b.js.map"
+    "main.500a4105.js.map": "/xlsx-compare-royal/static/js/main.500a4105.js.map"
   },
   "entrypoints": [
-    "static/js/main.f6c7fe3b.js"
+    "static/js/main.500a4105.js"
   ]
 }
