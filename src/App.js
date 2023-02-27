@@ -5,9 +5,14 @@ import FileLoader from "./components/FileLoader";
 
 function App() {
   const [error, setError] = useState("");
+  const [isReverse, setIsReverse] = useState(false);
 
   async function onDrop(files) {
     if (files.length !== 2) return;
+
+    if (isReverse) {
+      files = [...files].reverse();
+    }
 
     const firstFile = files[0];
     const secondFile = files[1];
@@ -93,6 +98,14 @@ function App() {
 
   return (
     <div className="App">
+      <label>
+        Змінити файли місцями
+        <input
+          type="checkbox"
+          checked={isReverse}
+          onChange={(e) => setIsReverse(e.target.checked)}
+        />
+      </label>
       <FileLoader onDrop={onDrop} />
       {error && <p style={{ textAlign: "center", color: "red" }}>{error}</p>}
     </div>
